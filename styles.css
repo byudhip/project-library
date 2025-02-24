@@ -48,8 +48,8 @@ input {
   padding: 3px;
 }
 
-button:not(".add-book-btn") {
-  padding: 15px;
+button:not(.add-book-btn) {
+  padding: 5px;
 }
 
 .book-form {
