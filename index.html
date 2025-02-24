@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Library</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <button class="add-book-btn">+</button>
+    <dialog class="new-book-modal">
+      <form action="" class="book-form">
+        <label for="title"
+          >Title: <input type="text" id="title" maxlength="20"
+        /></label>
+        <label for="author"
+          >Author: <input type="text" id="author" maxlength="20" /></label
+        ><label for="year"
+          >Year: <input type="tel" id="year" maxlength="4"
+        /></label>
+        <label for="pages"
+          >Pages: <input type="tel" id="pages" maxlength="4" /></label
+        ><label class="finished-reading" for="finished-reading"
+          >Finished reading?
+          <select name="done" id="finished-reading">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select></label
+        >
+        <button class="submit">Submit</button
+        ><button class="cancel-btn">Cancel</button>
+      </form>
+    </dialog>
+    <div class="library-shelf"></div>
   </body>
 </html>
