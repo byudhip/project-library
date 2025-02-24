@@ -121,7 +121,6 @@ newBookModal.addEventListener("click", (e) => {
     } else if (e.target.classList.contains("toggle-read")) {
       console.log("button pressed");
       console.log(myLibrary[index].title);
-      // myLibrary[index].finishRead = myLibrary[index].finishRead === "Yes" ? "No" : "Yes";
       myLibrary[index].toggleReadStatus();
       refreshDisplay();
     }
