@@ -12,15 +12,15 @@
     <dialog class="new-book-modal">
       <form action="" class="book-form">
         <label for="title"
-          >Title: <input type="text" id="title" maxlength="20"
+          >Title: <input type="text" id="title" minlength="3" maxlength="20" required
         /></label>
         <label for="author"
-          >Author: <input type="text" id="author" maxlength="20" /></label
+          >Author: <input type="text" id="author" minlength="3" maxlength="20" required/></label
         ><label for="year"
-          >Year: <input type="tel" id="year" maxlength="4"
+          >Year: <input type="number" id="year" min="0" maxlength="4" required
         /></label>
         <label for="pages"
-          >Pages: <input type="tel" id="pages" maxlength="4" /></label
+          >Pages: <input type="number" id="pages" min="2" maxlength="4" required></label
         ><label class="finished-reading" for="finished-reading"
           >Finished reading?
           <select name="done" id="finished-reading">
@@ -28,7 +28,7 @@
             <option value="no">No</option>
           </select></label
         >
-        <button class="submit">Submit</button
+        <button class="submit-btn">Submit</button
         ><button class="cancel-btn">Cancel</button>
       </form>
     </dialog>
