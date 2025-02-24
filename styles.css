@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 button,
 input,
 select,
@@ -15,6 +16,40 @@ textarea {
 /* Body Styles */
 body {
     font-family: Helvetica, Arial, system-ui;
-    height: 100vh;
     line-height: 1.5;
+}
+
+.library-shelf {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 15px;
+}
+
+.add-book-btn {
+  position: absolute;
+  top: 90%;
+  left: 1%;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid grey;
+}
+
+.book-form {
+  display: grid;
+  padding: 15px;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.finished-reading {
+  grid-column: 1/3;
+}
+
+.book {
+  padding: 15px;
+  width: 300px;
+  height: 200px;
+  border: 2px solid green;
 }
