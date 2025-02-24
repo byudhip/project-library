@@ -2,8 +2,7 @@
 
 const libraryShelf = document.querySelector(".library-shelf");
 const addBookBtn = document.querySelector(".add-book-btn");
-const cancelBtn = document.querySelector(".cancel-btn");
-const newBookModal = document.querySelector(".new-book-modal")
+const newBookModal = document.querySelector(".new-book-modal");
 
 const myLibrary = [];
 
@@ -36,16 +35,45 @@ addBookToLibrary("nyaharo", "sakura miko", 2018, 35, "yes");
 addBookToLibrary("kyou mo kawaii", "hoshimachi suisei", 2018, 125, "yes");
 addBookToLibrary("glasses are versatile", "shirakami fubuki", 2019, 3, "yes");
 
-for(let book of myLibrary) {
-  libraryShelf.innerHTML += `<div class="book">
+const refreshDisplay = () => {
+  libraryShelf.innerHTML = ``;
+  for (let book of myLibrary) {
+    libraryShelf.innerHTML += `<div class="book">
       <h3>Title: ${book.title}</h3>
       <p>Author: ${book.author}</p>
       <p>Year: ${book.year}</p>
       <p>${book.pages} pages</p>
       <p>Finished reading? ${book.finishRead}</p>
     </div>`;
-}
+  }
+};
+
+refreshDisplay();
 
 addBookBtn.addEventListener("click", () => newBookModal.showModal());
 
-cancelBtn.addEventListener("click", () => newBookModal.close());
+newBookModal.addEventListener("click", (e) => {
+  const title = document.querySelector("#title");
+  const author = document.querySelector("#author");
+  const year = document.querySelector("#year");
+  const pages = document.querySelector("#pages");
+  const finishRead = document.querySelector("#finished-reading");
+  if (e.target.classList.contains("cancel-btn")) {
+    newBookModal.close();
+  } else if (e.target.classList.contains("submit-btn")) {
+    e.preventDefault();
+    addBookToLibrary(
+      title.value,
+      author.value,
+      year.value,
+      pages.value,
+      finishRead.value
+    );
+    console.log(myLibrary);
+    refreshDisplay();
+    title.value, author.value, year.value, pages.value = "";
+    newBookModal.close();
+  }
+});
+
+console.log(myLibrary);
