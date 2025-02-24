@@ -22,8 +22,9 @@ body {
 .library-shelf {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin: 15px;
+  gap: 15px;
 }
 
 .add-book-btn {
@@ -65,7 +66,13 @@ button:not(.add-book-btn) {
 
 .book {
   padding: 15px;
-  width: 300px;
-  height: 200px;
-  border: 2px solid green;
+  border: 2px solid gainsboro;
+}
+
+.read-status {
+  display: inline-block;
+}
+
+.toggle-change {
+  display: block;
 }
