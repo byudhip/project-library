@@ -38,9 +38,9 @@ class Library {
       newBookModal.close();
     } else if (e.target.classList.contains("submit-btn")) {
       e.preventDefault();
-      if ((!title, !author, !year, !pages, finishRead)) {
+      if (!title.value || !author.value || !year.value || !pages.value) {
         alert("Please fill the book details!");
-      } else {
+      } else if (title.value && author.value && year.value && pages.value) {
         const newBook = new Book(
           title.value,
           author.value,
