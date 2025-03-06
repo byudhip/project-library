@@ -51,6 +51,11 @@ class Library {
         Library.addBookConsole(newBook);
         console.log(Library.getBooks());
         Library.refreshDisplay();
+        [title.value,
+          author.value,
+          year.value,
+          pages.value,
+          finishRead.value] = ['','','','','']; //clear input fields after succesful submission
         newBookModal.close();
       }
     }
