@@ -38,17 +38,21 @@ class Library {
       newBookModal.close();
     } else if (e.target.classList.contains("submit-btn")) {
       e.preventDefault();
-      const newBook = new Book(
-        title.value,
-        author.value,
-        year.value,
-        pages.value,
-        finishRead.value
-      );
-      Library.addBookConsole(newBook);
-      console.log(Library.getBooks());
-      Library.refreshDisplay();
-      newBookModal.close();
+      if ((!title, !author, !year, !pages, finishRead)) {
+        alert("Please fill the book details!");
+      } else {
+        const newBook = new Book(
+          title.value,
+          author.value,
+          year.value,
+          pages.value,
+          finishRead.value
+        );
+        Library.addBookConsole(newBook);
+        console.log(Library.getBooks());
+        Library.refreshDisplay();
+        newBookModal.close();
+      }
     }
   }
   static refreshDisplay() {
